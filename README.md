@@ -49,6 +49,7 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 | [Costory](https://docs.costory.io/features/mcp) `vendor` | MCP | AWS, Azure, GCP | Commercial (15-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
+| [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
 | [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
@@ -74,6 +75,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 
 Agents and copilots that analyze and act on cloud cost. Includes the commercial leaders for completeness (tagged `vendor`).
 
+- [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` - AWS's own agent (public preview, June 2026): investigates anomalies to root cause via CloudTrail, answers cost questions, schedules reports, and files optimization recommendations as Jira tickets. AWS only, console-based, free during preview with a usage cap.
 - [Vantage](https://www.vantage.sh) `vendor` - FinOps Agent that proactively finds savings and can execute commitment purchases with approval; ships open-source MCP servers.
 - [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
 - [Costory](https://costory.io) `vendor` - Agentic FinOps on top of a context layer (business metrics, unit economics, virtual dimensions); hosted MCP for Claude, Cursor, VS Code, and Dust.
