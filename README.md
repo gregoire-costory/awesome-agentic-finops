@@ -46,7 +46,7 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 
 | Tool | Kind | Cost sources | License | Delivery | Acts | Context | Note |
 |------|------|--------------|---------|----------|------|---------|------|
-| [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | AWS, GCP, Azure + SaaS & AI (Snowflake, Datadog, Anthropic, Cursor, Confluent, Aiven, Elastic) + custom FOCUS | Commercial (15-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
+| [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | Multi (cloud, LLM, data platforms) | Commercial (15-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi (cloud + SaaS) | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi (cloud + SaaS) | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
 | [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
