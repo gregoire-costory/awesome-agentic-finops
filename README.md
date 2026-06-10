@@ -145,6 +145,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 
 ### AWS
 
+- [alexcasalboni/aws-lambda-power-tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning) - Step Functions state machine that finds the cost and performance sweet spot for Lambda functions, data-driven.
 - [nilbuild/aws-cost-cli](https://github.com/nilbuild/aws-cost-cli) - AWS cost analysis in the terminal with a Slack summary.
 - [mlevit/aws-auto-cleanup](https://github.com/mlevit/aws-auto-cleanup) - Deletes AWS resources by allowlist and time to live.
 - [jcjorel/ec2-spot-converter](https://github.com/jcjorel/ec2-spot-converter) - Converts EC2 instances between On-Demand and Spot in place.
