@@ -1,45 +1,86 @@
 # Awesome Agentic FinOps [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of open-source and AI-native tooling for cloud cost management (FinOps): MCP servers, AI-assistant skills, AI cost agents, and the broader open-source FinOps ecosystem.
+> A curated, opinionated map of agentic and open-source tooling for cloud cost management (FinOps): MCP servers, AI cost agents and assistants, assistant skills, and the broader open-source FinOps ecosystem.
 
-Most FinOps lists predate the agentic shift. This one leads with the new layer (MCP servers, Claude and other assistant skills, AI cost agents) and keeps a complete map of the established open-source FinOps tooling alongside it.
+This list leads with the **agentic layer** (the tools that let you query, analyze, and act on cloud cost through an AI assistant) because that is the part the older FinOps lists do not cover, and keeps a complete map of the established open-source FinOps tooling underneath it.
 
-Maintained by the team at [Costory](https://costory.io). Costory's MCP is listed under [MCP Servers](#mcp-servers) on exactly the same terms as every other entry. Additions, corrections, and removals (including of our own entry, if the list ever skews) are welcome by pull request or issue. See [Contributing](CONTRIBUTING.md).
+Maintained by the team at [Costory](https://costory.io). Costory is a vendor and is tagged `vendor` in the list, the same as every other vendor, and its entry is held to the same bar. Additions, corrections, and removals (including of our own entry) are welcome by pull request or issue. See [Contributing](CONTRIBUTING.md) for the inclusion criteria.
+
+## What is "agentic FinOps"?
+
+A rough maturity ladder, useful for reading the list:
+
+- **L0 - Dashboards.** You read charts and pull reports by hand.
+- **L1 - Chat with your costs.** Ask questions in natural language and get answers (most MCP servers and assistants today).
+- **L2 - The agent acts, with approval.** It creates alerts, reports, annotations, or tickets on your say-so.
+- **L3 - Closed loop.** It proposes and executes changes (rightsizing, commitments) within guardrails.
+
+Two capabilities separate the genuinely useful from the demo: whether a tool understands your **business context** (allocation, unit economics, virtual dimensions, not just raw service spend), and whether it can safely **act** rather than only answer. The comparison table notes both.
 
 ## Contents
 
-- [MCP Servers](#mcp-servers)
-- [AI Assistant Skills & Plugins](#ai-assistant-skills--plugins)
-- [AI Cost Agents](#ai-cost-agents)
-- [Kubernetes & Container Cost](#kubernetes--container-cost)
-- [Infrastructure as Code Cost](#infrastructure-as-code-cost)
-- [Multi-Cloud Platforms & Scanners](#multi-cloud-platforms--scanners)
-- [AWS](#aws)
-- [Azure](#azure)
-- [GCP & Other Clouds](#gcp--other-clouds)
-- [Pricing Data & Calculators](#pricing-data--calculators)
-- [GreenOps & Sustainability](#greenops--sustainability)
-- [Standards & Foundations](#standards--foundations)
-- [Learning & Reference](#learning--reference)
-- [Related Lists](#related-lists)
+- [Agentic FinOps](#agentic-finops)
+  - [Comparison](#comparison)
+  - [MCP servers](#mcp-servers)
+  - [AI cost agents & assistants](#ai-cost-agents--assistants)
+  - [Assistant skills & plugins](#assistant-skills--plugins)
+  - [Evals & benchmarks](#evals--benchmarks)
+- [The broader open-source FinOps ecosystem](#the-broader-open-source-finops-ecosystem)
+  - [Kubernetes & container cost](#kubernetes--container-cost)
+  - [Infrastructure as code cost](#infrastructure-as-code-cost)
+  - [Multi-cloud platforms & scanners](#multi-cloud-platforms--scanners)
+  - [AWS](#aws)
+  - [Azure](#azure)
+  - [GCP & other clouds](#gcp--other-clouds)
+  - [Pricing data & calculators](#pricing-data--calculators)
+  - [GreenOps & sustainability](#greenops--sustainability)
+  - [Standards & foundations](#standards--foundations)
+  - [Learning & reference](#learning--reference)
+  - [Related lists](#related-lists)
 
-## MCP Servers
+## Agentic FinOps
+
+### Comparison
+
+Vendor tools and the most active open-source MCP servers, side by side. "Acts" means it can take an action (create an alert, report, or annotation) and not only answer. "Context" means it models allocation or unit economics, not just raw service spend.
+
+| Tool | Kind | Clouds | License | Delivery | Acts | Context | Note |
+|------|------|--------|---------|----------|------|---------|------|
+| [Costory](https://docs.costory.io/features/mcp) `vendor` | MCP | AWS, Azure, GCP | Commercial (15-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
+| [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
+| [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
+| [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
+| [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
+| [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
+| [cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) | MCP | AWS, Azure, GCP, OCI | OSS (Apache-2.0) | Self-host | Read | No | Multi-cloud price comparison from public APIs. |
+| [aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Drives the AWS Pricing Calculator, no credentials. |
+
+### MCP servers
 
 Model Context Protocol servers that expose cloud cost data and actions to AI assistants.
 
-- [aarora79/aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) - AWS spend via Cost Explorer plus Amazon Bedrock model-invocation logs, over MCP.
+- [aarora79/aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) - AWS spend via Cost Explorer plus Amazon Bedrock model-invocation logs. Good if you want cloud and LLM spend in one place.
 - [ravikiranvm/aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) - AWS cost analysis, waste audit, and budgets across CLI profiles; credentials stay local.
 - [prashantgupta123/aws-finops-mcp-server](https://github.com/prashantgupta123/aws-finops-mcp-server) - AWS FinOps MCP packaged for the Amazon Bedrock AgentCore runtime.
-- [msftnadavbh/AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) - Azure retail pricing over MCP, with Spot and savings analysis and orphaned-resource detection.
+- [msftnadavbh/AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) - Azure retail pricing with Spot and savings analysis and orphaned-resource detection.
 - [julianobarbosa/azure-finops-mcp-server](https://github.com/julianobarbosa/azure-finops-mcp-server) - Azure cost analysis, waste audit, and budgets over MCP.
-- [chaandannn/finopsmcp](https://github.com/chaandannn/finopsmcp) - "nable", connects Claude to AWS, Azure, GCP, and SaaS billing (such as Datadog) in plain English.
-- [Musheer360/aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) - Drives the AWS Pricing Calculator (436 services) via headless Chrome; Savings Plans and Reserved Instances, no credentials required.
+- [chaandannn/finopsmcp](https://github.com/chaandannn/finopsmcp) - "nable", connects an assistant to AWS, Azure, GCP, and SaaS billing (such as Datadog) in plain English.
+- [Musheer360/aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) - Drives the AWS Pricing Calculator (436 services) via headless Chrome; no credentials required.
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
-- [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management technical playbooks.
-- [Costory MCP](https://docs.costory.io/features/mcp) - Hosted MCP for the Costory cost platform; query and compare costs, create alerts and saved views, send Slack reports, over OAuth for Claude, Cursor, VS Code, and Dust.
+- [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 
-## AI Assistant Skills & Plugins
+### AI cost agents & assistants
+
+Agents and copilots that analyze and act on cloud cost. Includes the commercial leaders for completeness (tagged `vendor`).
+
+- [Vantage](https://www.vantage.sh) `vendor` - FinOps Agent that proactively finds savings and can execute commitment purchases with approval; ships open-source MCP servers.
+- [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
+- [Costory](https://costory.io) `vendor` - Agentic FinOps on top of a context layer (business metrics, unit economics, virtual dimensions); hosted MCP for Claude, Cursor, VS Code, and Dust.
+- [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
+- [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
+
+### Assistant skills & plugins
 
 Skills and plugins that turn an AI coding assistant into a cost operator.
 
@@ -47,25 +88,21 @@ Skills and plugins that turn an AI coding assistant into a cost operator.
 - [mindaugasnakrosis/azure-costs-analyzer](https://github.com/mindaugasnakrosis/azure-costs-analyzer) - Claude Code skill for a read-only Azure cost review against Microsoft and FinOps Foundation rules.
 - [prajapatimehul/claude-aws-cost-saver](https://github.com/prajapatimehul/claude-aws-cost-saver) - Claude Code and Codex plugin with 160+ AWS cost checks.
 - [zxkane/aws-skills](https://github.com/zxkane/aws-skills) - Claude Code plugins for AWS including cost optimization, CDK, serverless, and Bedrock AgentCore.
-- [abhilashchowdhary/claude-code-skills](https://github.com/abhilashchowdhary/claude-code-skills) - Claude Code skills including a full AWS cost audit.
 - [shivamsriva31093/gcp-ironclad](https://github.com/shivamsriva31093/gcp-ironclad) - Claude Code skills plus a gcp-finops MCP for GCP API-key audit and safe spend hardening.
 - [unfunco/claude-aws-billing-summary](https://github.com/unfunco/claude-aws-billing-summary) - GitHub Action that posts a Claude-generated monthly AWS billing summary.
 - [OptimNow/cloud-finops-skills](https://github.com/OptimNow/cloud-finops-skills) - FOCUS-aligned FinOps knowledge skill and MCP for AI coding assistants.
-- [Cletrics/finops-agents](https://github.com/Cletrics/finops-agents) - Collection of FinOps specialist agents for Claude Code, Cursor, and other assistants.
 - [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - Curated MCP servers and resources for cloud FinOps practitioners.
+- [Cletrics/finops-agents](https://github.com/Cletrics/finops-agents) - Collection of FinOps specialist agents for assistants.
 
-## AI Cost Agents
+### Evals & benchmarks
 
-Standalone agents and apps that analyze and act on cloud cost.
+Emerging. There is not yet a credible, neutral public benchmark for FinOps assistants. If you are building one, open a PR.
 
-- [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
-- [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
-- [vanhoangkha/sample-costminimizer](https://github.com/vanhoangkha/sample-costminimizer) - AWS cost tool generating reports from Cost Explorer, Trusted Advisor, Compute Optimizer, and Bedrock.
-- [kkpkishan/aws-billing-insights](https://github.com/kkpkishan/aws-billing-insights) - AWS billing analysis and recommendations via Amazon Bedrock.
+## The broader open-source FinOps ecosystem
 
-## Kubernetes & Container Cost
+### Kubernetes & container cost
 
-- [opencost/opencost](https://github.com/opencost/opencost) - CNCF project and spec for Kubernetes and cloud cost monitoring.
+- [opencost/opencost](https://github.com/opencost/opencost) - CNCF project and spec for Kubernetes and cloud cost monitoring. The de facto open standard for K8s cost.
 - [robusta-dev/krr](https://github.com/robusta-dev/krr) - Prometheus-based Kubernetes CPU and memory recommendations.
 - [gocrane/crane](https://github.com/gocrane/crane) - FinOps platform for Kubernetes cost and resource analytics.
 - [gocrane/fadvisor](https://github.com/gocrane/fadvisor) - Cost exporters for Kubernetes guided by FinOps.
@@ -80,9 +117,9 @@ Standalone agents and apps that analyze and act on cloud cost.
 - [AxaFrance/dailyclean](https://github.com/AxaFrance/dailyclean) - Turns pods off outside office hours.
 - [truefoundry/CruiseKube](https://github.com/truefoundry/CruiseKube) - Kubernetes resource optimization controller.
 
-## Infrastructure as Code Cost
+### Infrastructure as code cost
 
-- [infracost/infracost](https://github.com/infracost/infracost) - Cloud cost estimates for Terraform in CI and pull requests.
+- [infracost/infracost](https://github.com/infracost/infracost) - Cloud cost estimates for Terraform in CI and pull requests. The category leader for shift-left cost.
 - [cycloidio/terracost](https://github.com/cycloidio/terracost) - Terraform cost estimation library and CLI.
 - [terrateamio/openinfraquote](https://github.com/terrateamio/openinfraquote) - Cost estimates from Terraform plans and state files.
 - [TheCloudTheory/arm-estimator](https://github.com/TheCloudTheory/arm-estimator) - Azure cost estimates for ARM, Bicep, and Terraform.
@@ -90,7 +127,7 @@ Standalone agents and apps that analyze and act on cloud cost.
 - [rshade/finfocus](https://github.com/rshade/finfocus) - FinOps CLI for Pulumi: projected and actual spend, budgets.
 - [alikzao/terraform-cost-guard](https://github.com/alikzao/terraform-cost-guard) - Detects idle AWS resources using CUR, Athena, and Grafana.
 
-## Multi-Cloud Platforms & Scanners
+### Multi-cloud platforms & scanners
 
 - [hystax/optscale](https://github.com/hystax/optscale) - FinOps and cost optimization across AWS, Azure, GCP, Alibaba Cloud, and Kubernetes.
 - [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) - Policy-as-code engine for cost, security, and governance.
@@ -104,74 +141,73 @@ Standalone agents and apps that analyze and act on cloud cost.
 - [electrolux-oss/infrawallet](https://github.com/electrolux-oss/infrawallet) - Backstage plugin for cloud cost control.
 - [ssp-data/cloud-cost-analyzer](https://github.com/ssp-data/cloud-cost-analyzer) - Open framework for multi-cloud cost visibility.
 
-## AWS
+### AWS
 
 - [nilbuild/aws-cost-cli](https://github.com/nilbuild/aws-cost-cli) - AWS cost analysis in the terminal with a Slack summary.
 - [mlevit/aws-auto-cleanup](https://github.com/mlevit/aws-auto-cleanup) - Deletes AWS resources by allowlist and time to live.
 - [jcjorel/ec2-spot-converter](https://github.com/jcjorel/ec2-spot-converter) - Converts EC2 instances between On-Demand and Spot in place.
 - [sqlxpert/lights-off-aws](https://github.com/sqlxpert/lights-off-aws) - Stops EC2 and RDS on a cron schedule via resource tags.
 - [toricls/acos](https://github.com/toricls/acos) - Interactive CLI for AWS cost across an Organization.
-- [c1982/awsdtc](https://github.com/c1982/awsdtc) - AWS data-transfer cost explorer.
+- [c1982/awsdtc](https://github.com/c1982/awsdtc) - AWS data-transfer cost explorer, the cost nobody can otherwise explain.
 - [jimzucker/aws-forecast](https://github.com/jimzucker/aws-forecast) - Reproduces the Cost Explorer forecast and posts it to Slack.
 - [realadeel/CloudVac](https://github.com/realadeel/CloudVac) - Cleans up unused AWS resources across profiles and regions.
 - [robsonbittencourt/aws-cost-miner](https://github.com/robsonbittencourt/aws-cost-miner) - Extracts useful information from the AWS billing report.
 - [idvoretskyi/aws-s3-cost-explorer](https://github.com/idvoretskyi/aws-s3-cost-explorer) - Single-binary CLI for S3 storage costs and tiers.
 - [turbot/steampipe-mod-aws-thrifty](https://github.com/turbot/steampipe-mod-aws-thrifty) - Checks AWS accounts for unused and under-used resources.
 - [aws-solutions-library-samples/cloud-intelligence-dashboards-framework](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) - Deploys the AWS Cloud Intelligence Dashboards.
-- [aws-samples/service-screener-v2](https://github.com/aws-samples/service-screener-v2) - Evaluates AWS configurations against best practices including cost.
 - [sls-mentor/sls-mentor](https://github.com/sls-mentor/sls-mentor) - Audits serverless AWS apps across cost and other pillars.
 - [trackit/trackit](https://github.com/trackit/trackit) - Tooling to understand and improve AWS usage.
-- [disneystreaming/automated-cloud-advisor](https://github.com/disneystreaming/automated-cloud-advisor) - Collects under-utilized AWS resources for cost optimization.
 
-## Azure
+### Azure
 
 - [mivano/azure-cost-cli](https://github.com/mivano/azure-cost-cli) - CLI for Azure cost with daily cost, budgets, and anomaly detection; assistant-friendly output.
 - [thgossler/AzSaveMoney](https://github.com/thgossler/AzSaveMoney) - Flags unused Azure resources for cleanup via tagging.
 - [rowilson/azure-cost-management-pbit](https://github.com/rowilson/azure-cost-management-pbit) - Power BI template for Azure Cost Management.
 - [microsoft/finops-toolkit](https://github.com/microsoft/finops-toolkit) - Microsoft tooling and FOCUS exports for Azure FinOps.
 
-## GCP & Other Clouds
+### GCP & other clouds
 
 - [Cyclenerd/google-cloud-pricing-cost-calculator](https://github.com/Cyclenerd/google-cloud-pricing-cost-calculator) - GCP cost estimates from YAML files and a CLI.
 - [Cyclenerd/poweroff-google-cloud-cap-billing](https://github.com/Cyclenerd/poweroff-google-cloud-cap-billing) - Caps GCP billing by automating shutdown.
 - [doitintl/iris3](https://github.com/doitintl/iris3) - Automatic GCP resource labeling for cost allocation.
 - [dennisklappe/cf-ledger](https://github.com/dennisklappe/cf-ledger) - Per-application Cloudflare cost attribution.
 
-## Pricing Data & Calculators
+### Pricing data & calculators
 
 - [vantage-sh/ec2instances.info](https://github.com/vantage-sh/ec2instances.info) - EC2 and related instance pricing comparison.
 - [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
 - [bytebase/dbcost](https://github.com/bytebase/dbcost) - Cloud database pricing comparison.
 - [TUM-DIS/cloudspecs](https://github.com/TUM-DIS/cloudspecs) - Browser explorer for EC2 instances powered by DuckDB-WASM.
 
-## GreenOps & Sustainability
+### GreenOps & sustainability
 
 - [omrdev1/greenops-cli](https://github.com/omrdev1/greenops-cli) - Carbon-footprint linting for CI/CD pipelines.
 - [vinayalodha/greenbot](https://github.com/vinayalodha/greenbot) - AWS cost optimization tool.
 
-## Standards & Foundations
+### Standards & foundations
 
-- [FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) - FOCUS, the open specification for billing and usage data.
-- [finopsfoundation](https://github.com/finopsfoundation) - The FinOps Foundation framework, definitions, and KPIs.
+- [FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) - FOCUS, the open specification for billing and usage data. FOCUS 1.2+ supports non-monetary pricing units (such as tokens), the hook for AI-spend reporting.
+- [finopsfoundation](https://github.com/finopsfoundation) - The FinOps Foundation framework, definitions, and KPIs. Note the distinction between "FinOps for AI" (managing AI and token spend) and "AI for FinOps" (agents doing FinOps work).
 - [project-koku/koku](https://github.com/project-koku/koku) - Open cost management for hybrid cloud, from Red Hat.
 
-## Learning & Reference
+### Learning & reference
 
 - [kdeldycke/awesome-billing](https://github.com/kdeldycke/awesome-billing) - Billing and payments knowledge for cloud platforms.
 - [ravsau/aws-cloud-cost-management](https://github.com/ravsau/aws-cloud-cost-management) - AWS cost optimization notes and a video playlist.
 - [vantage-sh/handbook.vantage.sh](https://github.com/vantage-sh/handbook.vantage.sh) - The Cloud Cost Handbook, plain-English guides to cloud pricing.
 - [ahmadalibagheri/finops-tutorial](https://github.com/ahmadalibagheri/finops-tutorial) - A FinOps tutorial series.
 
-## Related Lists
+### Related lists
 
 - [jmfontaine/awesome-finops](https://github.com/jmfontaine/awesome-finops) - The original Awesome FinOps list.
 - [Funkmyster/awesome-cloud-cost-control](https://github.com/Funkmyster/awesome-cloud-cost-control) - Tools, blogs, podcasts, and standards for cloud cost control.
 - [ElementTech/awesome-cloud-cost](https://github.com/ElementTech/awesome-cloud-cost) - Tips, tricks, and hacks for saving cloud cost.
 - [lcenchew/awesome-aws-cost-management](https://github.com/lcenchew/awesome-aws-cost-management) - Resources for managing AWS cost.
+- [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - A focused list of MCP servers and resources for FinOps.
 
 ## Contributing
 
-Contributions are welcome. Read the [contribution guidelines](CONTRIBUTING.md) first. Open a pull request to add, correct, or remove an entry.
+Contributions are welcome, including from vendors and competitors, under the same rules. Read the [contribution guidelines](CONTRIBUTING.md): inclusion criteria, the `vendor` disclosure tag, and the annotation style (factual, no negative editorializing).
 
 ## License
 
