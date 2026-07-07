@@ -50,6 +50,7 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi (cloud + SaaS) | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi (cloud + SaaS) | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
 | [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
+| [Oodle AI](https://www.oodle.ai) `vendor` | Assistant + MCP | AI agent spend (Claude Code, Codex), observability, K8s | Commercial | Hosted (SaaS or BYOC), MCP | Yes (alerts, drop rules, optimizer) | Partial (cost-per-PR, user/team/repo dimensions) | AI Cost Management tracks coding-agent spend; also reduces observability cost via metrics analysis and drop rules. |
 | [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
@@ -70,6 +71,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
+- [Oodle AI](https://docs.oodle.ai/integrations/mcp/) `vendor` - Observability MCP server exposing logs, metrics, traces, K8s optimization, and metrics cost analysis to Cursor, Claude Code, and Codex; includes tools for AI agent cost tracking, drop rules, and cardinality analysis.
 
 ### AI cost agents & assistants
 
@@ -79,6 +81,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [Vantage](https://www.vantage.sh) `vendor` - FinOps Agent that proactively finds savings and can execute commitment purchases with approval; ships open-source MCP servers.
 - [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
 - [Costory](https://costory.io) `vendor` - Assistant and hosted MCP on top of a context layer (business metrics, unit economics, virtual dimensions); ingests cloud (AWS, GCP, Azure) plus SaaS and AI spend (Snowflake, Datadog, Anthropic, Cursor, and more); runs in Claude, Cursor, VS Code, and Dust.
+- [Oodle AI](https://www.oodle.ai/product/ai-cost-management) `vendor` - AI Cost Management for coding agents (Claude Code, Codex): tracks spend by user, model, team, and repo with session-level waste detection and cost-per-PR leaderboards. Also provides agent-driven debugging, a K8s Optimizer, and metrics cost analysis via MCP.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
@@ -118,6 +121,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [kube-ns-suspender/kube-ns-suspender](https://github.com/kube-ns-suspender/kube-ns-suspender) - Scales idle namespaces down on demand.
 - [AxaFrance/dailyclean](https://github.com/AxaFrance/dailyclean) - Turns pods off outside office hours.
 - [truefoundry/CruiseKube](https://github.com/truefoundry/CruiseKube) - Kubernetes resource optimization controller.
+- [Oodle AI](https://docs.oodle.ai/kubernetes/optimizer) `vendor` - Kubernetes resource optimization recommendations as part of Oodle's observability platform; identifies over-provisioned workloads.
 
 ### Infrastructure as code cost
 
