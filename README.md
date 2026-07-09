@@ -70,6 +70,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
+- [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
 
 ### AI cost agents & assistants
 
@@ -79,6 +80,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [Vantage](https://www.vantage.sh) `vendor` - FinOps Agent that proactively finds savings and can execute commitment purchases with approval; ships open-source MCP servers.
 - [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
 - [Costory](https://costory.io) `vendor` - Assistant and hosted MCP on top of a context layer (business metrics, unit economics, virtual dimensions); ingests cloud (AWS, GCP, Azure) plus SaaS and AI spend (Snowflake, Datadog, Anthropic, Cursor, and more); runs in Claude, Cursor, VS Code, and Dust.
+- [Atmoz](https://atmoz.co) `vendor` - Real-time cloud and AI efficiency platform; its Finius agent detects waste as it happens and pushes recommendations into Slack, Teams, and the IDE; read-only, with budgets, SSO, and RBAC.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
@@ -95,6 +97,7 @@ Skills and plugins that turn an AI coding assistant into a cost operator.
 - [OptimNow/cloud-finops-skills](https://github.com/OptimNow/cloud-finops-skills) - FOCUS-aligned FinOps knowledge skill and MCP for AI coding assistants.
 - [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - Curated MCP servers and resources for cloud FinOps practitioners.
 - [Cletrics/finops-agents](https://github.com/Cletrics/finops-agents) - Collection of FinOps specialist agents for assistants.
+- [costory-io/costory-plugin](https://github.com/costory-io/costory-plugin) `vendor` - Claude Code plugin bundling Costory's FinOps skills (cost analysis, alerts, report-to-Slack), a cost-investigator agent, and the hosted Costory MCP.
 
 ### Evals & benchmarks
 
