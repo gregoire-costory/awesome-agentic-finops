@@ -97,7 +97,7 @@ Skills and plugins that turn an AI coding assistant into a cost operator.
 - [OptimNow/cloud-finops-skills](https://github.com/OptimNow/cloud-finops-skills) - FOCUS-aligned FinOps knowledge skill and MCP for AI coding assistants.
 - [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - Curated MCP servers and resources for cloud FinOps practitioners.
 - [Cletrics/finops-agents](https://github.com/Cletrics/finops-agents) - Collection of FinOps specialist agents for assistants.
-- [costory-io/costory-plugin](https://github.com/costory-io/costory-plugin) `vendor` - Claude Code plugin bundling Costory's FinOps skills (cost analysis, alerts, report-to-Slack), a cost-investigator agent, and the hosted Costory MCP.
+- [costory-io/costory-plugin](https://github.com/costory-io/costory-plugin) `vendor` - Claude Code plugin packaging Costory as three parts: [FinOps skills](https://github.com/costory-io/costory-plugin#finops-skills) (cost analysis, alerts, report-to-Slack), [autonomous agents](https://github.com/costory-io/costory-plugin#autonomous-finops-agents) such as a cost-investigator, and the [MCP tools](https://github.com/costory-io/costory-plugin#mcp-tools-reference) behind them.
 
 ### Evals & benchmarks
 
