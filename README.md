@@ -81,6 +81,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
 - [Costory](https://costory.io) `vendor` - Assistant and hosted MCP on top of a context layer (business metrics, unit economics, virtual dimensions); ingests cloud (AWS, GCP, Azure) plus SaaS and AI spend (Snowflake, Datadog, Anthropic, Cursor, and more); runs in Claude, Cursor, VS Code, and Dust.
 - [Atmoz](https://atmoz.co) `vendor` - Real-time cloud and AI efficiency platform; its Finius agent detects waste as it happens and pushes recommendations into Slack, Teams, and the IDE; read-only, with budgets, SSO, and RBAC.
+- [NudgeBee](https://github.com/nudgebee/nudgebee) `vendor` - Self-hosted agent that detects idle resources, spend anomalies, and rightsizing opportunities across AWS, Azure, GCP, and Kubernetes, and applies fixes through approval-gated runbooks. For platform and FinOps teams that want the optimization running inside their own cluster.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
