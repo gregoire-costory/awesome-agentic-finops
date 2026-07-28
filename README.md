@@ -210,6 +210,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [ElementTech/awesome-cloud-cost](https://github.com/ElementTech/awesome-cloud-cost) - Tips, tricks, and hacks for saving cloud cost.
 - [lcenchew/awesome-aws-cost-management](https://github.com/lcenchew/awesome-aws-cost-management) - Resources for managing AWS cost.
 - [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - A focused list of MCP servers and resources for FinOps.
+- [QuesmaOrg/awesome-ai-tokenomics](https://github.com/QuesmaOrg/awesome-ai-tokenomics) - Measuring, monitoring, and optimizing token spend in LLM and AI agent workflows.
 
 ## Contributing
 
