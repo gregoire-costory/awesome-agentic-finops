@@ -49,7 +49,9 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 | [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | Multi (cloud, LLM, data platforms) | Commercial (15-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi (cloud + SaaS) | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi (cloud + SaaS) | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
-| [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
+| [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) 
+| [Solvicus](https://solvicus.com) `vendor` | MCP | GCP public pricing only; no billing access | Commercial (free tier) | Hosted, OAuth or API key | No (recommends; you purchase in GCP) | No | Sizes GCP CUD commitments from forward demand (contracts, renewals, pipeline) rather than usage history. |
+| AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
 | [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
@@ -71,6 +73,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 - [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
+- [Solvicus](https://solvicus.com/finops-mcp-server) `vendor` - Sizes Google Cloud committed use discount (CUD) commitments against forward demand you already know — signed contracts, renewals and weighted pipeline — instead of usage history. Recommend-only, with no billing or console access.
 
 ### AI cost agents & assistants
 
