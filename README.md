@@ -89,7 +89,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 
 Skills and plugins that turn an AI coding assistant into a cost operator.
 
-- [costory-io/costory-plugin](https://github.com/costory-io/costory-plugin) `vendor` - AI agent plugin packaging Costory as three parts: [FinOps skills](https://github.com/costory-io/costory-plugin#finops-skills) (cost analysis, alerts, report-to-Slack), [autonomous agents](https://github.com/costory-io/costory-plugin#autonomous-finops-agents) such as a cost-investigator, and the [MCP tools](https://github.com/costory-io/costory-plugin#mcp-tools-reference) behind them.
+- [costory-io/costory-finops-mcp-skills](https://github.com/costory-io/costory-finops-mcp-skills) `vendor` - Claude Code / Codex marketplace plugin packaging five [FinOps skills](https://github.com/costory-io/costory-finops-mcp-skills#finops-skills) (query investigation, virtual dimensions, dashboards, reports/DIGEST, recipes) over the hosted [Costory MCP tools](https://github.com/costory-io/costory-finops-mcp-skills#mcp-tools-reference), plus a library of ready-made tracking recipes.
 - [Aboudjem/aws-cost-audit-skill](https://github.com/Aboudjem/aws-cost-audit-skill) - Claude skill that audits an AWS bill; evidence-first, read-only, follows AWS Well-Architected and the FinOps Foundation framework.
 - [mindaugasnakrosis/azure-costs-analyzer](https://github.com/mindaugasnakrosis/azure-costs-analyzer) - Claude Code skill for a read-only Azure cost review against Microsoft and FinOps Foundation rules.
 - [prajapatimehul/claude-aws-cost-saver](https://github.com/prajapatimehul/claude-aws-cost-saver) - Claude Code and Codex plugin with 160+ AWS cost checks.
