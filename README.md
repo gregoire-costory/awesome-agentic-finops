@@ -71,6 +71,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 - [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
+- [Zopnight](https://zop.dev/learn/mcp-server?utm_source=awesome-agentic-finops&utm_medium=listing&utm_campaign=mcp-directory) `vendor` - Hosted MCP server for cloud cost and infrastructure governance across AWS, Azure, and GCP: cost by provider, resource, tag, and team, budgets, rightsizing and idle-resource recommendations, plus Kubernetes and service diagnostics. Writes are off by default, behind an organisation-level permission tier.
 
 ### AI cost agents & assistants
 
