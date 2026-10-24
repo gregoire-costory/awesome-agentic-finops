@@ -60,6 +60,7 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 
 Model Context Protocol servers that expose cloud cost data and actions to AI assistants.
 
+- [towardsthecloud/cloudburn](https://github.com/towardsthecloud/cloudburn) `vendor` - MCP server for read-only AWS cost checks in Terraform, CloudFormation, and live accounts, with a CLI and a Claude Code/Codex plugin.
 - [aarora79/aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) - AWS spend via Cost Explorer plus Amazon Bedrock model-invocation logs. Good if you want cloud and LLM spend in one place.
 - [ravikiranvm/aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) - AWS cost analysis, waste audit, and budgets across CLI profiles; credentials stay local.
 - [prashantgupta123/aws-finops-mcp-server](https://github.com/prashantgupta123/aws-finops-mcp-server) - AWS FinOps MCP packaged for the Amazon Bedrock AgentCore runtime.
