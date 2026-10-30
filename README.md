@@ -181,10 +181,11 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 
 ### Pricing data & calculators
 
-- [vantage-sh/ec2instances.info](https://github.com/vantage-sh/ec2instances.info) - EC2 and related instance pricing comparison.
-- [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
+- [Basileion/vpsledger](https://github.com/Basileion/vpsledger) - VPS true-cost calculator and open JSON dataset comparing list price plus IPv4, backups and egress across providers.
 - [bytebase/dbcost](https://github.com/bytebase/dbcost) - Cloud database pricing comparison.
+- [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
 - [TUM-DIS/cloudspecs](https://github.com/TUM-DIS/cloudspecs) - Browser explorer for EC2 instances powered by DuckDB-WASM.
+- [vantage-sh/ec2instances.info](https://github.com/vantage-sh/ec2instances.info) - EC2 and related instance pricing comparison.
 
 ### GreenOps & sustainability
 
