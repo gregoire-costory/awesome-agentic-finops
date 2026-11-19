@@ -68,6 +68,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [chaandannn/finopsmcp](https://github.com/chaandannn/finopsmcp) - "nable", connects an assistant to AWS, Azure, GCP, and SaaS billing (such as Datadog) in plain English.
 - [Musheer360/aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) - Drives the AWS Pricing Calculator (436 services) via headless Chrome; no credentials required.
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
+- [connormatthewdouglas/agent-work-stack-deals](https://github.com/connormatthewdouglas/agent-work-stack-deals) - Free, read-only MCP server for GPU cloud rental prices, price changes and deals across providers. Hosted at `https://lantern-works-mcp.lantern-works.workers.dev/mcp` with no API key, or run locally with `uvx lantern-works-deals-mcp`.
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 - [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
