@@ -185,6 +185,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
 - [bytebase/dbcost](https://github.com/bytebase/dbcost) - Cloud database pricing comparison.
 - [TUM-DIS/cloudspecs](https://github.com/TUM-DIS/cloudspecs) - Browser explorer for EC2 instances powered by DuckDB-WASM.
+- [computecomparison.com](https://computecomparison.com/) - GPU cloud and LLM API price comparison with a free public pricing API.
 
 ### GreenOps & sustainability
 
