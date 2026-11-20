@@ -84,6 +84,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [NudgeBee](https://github.com/nudgebee/nudgebee) `vendor` - Self-hosted agent that detects idle resources, spend anomalies, and rightsizing opportunities across AWS, Azure, GCP, and Kubernetes, and applies fixes through approval-gated runbooks. For platform and FinOps teams that want the optimization running inside their own cluster.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
+- [Watchtower](https://watchtower.cerebrixos.com) `vendor` - Scans Azure, AWS and Google Cloud accounts for cost, security and drift findings, with an MCP server at `https://watchtower.cerebrixos.com/mcp`; for platform and FinOps teams.
 
 ### Assistant skills & plugins
 
