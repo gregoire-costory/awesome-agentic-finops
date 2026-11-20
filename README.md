@@ -54,6 +54,7 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
 | [cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) | MCP | AWS, Azure, GCP, OCI | OSS (Apache-2.0) | Self-host | Read | No | Multi-cloud price comparison from public APIs. |
+| [dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` | MCP + notebook | Databricks system tables | OSS (MIT) | Self-host | Proposals only (never applied) | No | Idle warehouses, long auto-stop, jobs on all-purpose, Delta maintenance signals. |
 | [aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Drives the AWS Pricing Calculator, no credentials. |
 
 ### MCP servers
@@ -65,6 +66,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [prashantgupta123/aws-finops-mcp-server](https://github.com/prashantgupta123/aws-finops-mcp-server) - AWS FinOps MCP packaged for the Amazon Bedrock AgentCore runtime.
 - [msftnadavbh/AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) - Azure retail pricing with Spot and savings analysis and orphaned-resource detection.
 - [julianobarbosa/azure-finops-mcp-server](https://github.com/julianobarbosa/azure-finops-mcp-server) - Azure cost analysis, waste audit, and budgets over MCP.
+- [markatdataandbeyond/dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` - Read-only Databricks DBU cost and waste checks from system tables (idle SQL warehouses, long auto-stop, jobs on all-purpose, Delta OPTIMIZE/VACUUM needs). Proposes Asset Bundle diffs and SQL; never applies them. MIT notebook + stdio MCP.
 - [chaandannn/finopsmcp](https://github.com/chaandannn/finopsmcp) - "nable", connects an assistant to AWS, Azure, GCP, and SaaS billing (such as Datadog) in plain English.
 - [Musheer360/aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) - Drives the AWS Pricing Calculator (436 services) via headless Chrome; no credentials required.
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
