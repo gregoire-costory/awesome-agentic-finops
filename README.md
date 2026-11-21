@@ -185,6 +185,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
 - [bytebase/dbcost](https://github.com/bytebase/dbcost) - Cloud database pricing comparison.
 - [TUM-DIS/cloudspecs](https://github.com/TUM-DIS/cloudspecs) - Browser explorer for EC2 instances powered by DuckDB-WASM.
+- [CIOQuest LLM Cost Calculator](https://cioquest.com/llm-cost-calculator) `vendor` - Free calculator: monthly LLM API cost from requests per day, tokens, cache share and retry share, using dated provider list prices.
 
 ### GreenOps & sustainability
 
