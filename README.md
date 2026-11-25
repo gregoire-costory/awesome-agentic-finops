@@ -50,6 +50,7 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi (cloud + SaaS) | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi (cloud + SaaS) | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
 | [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
+| [Solvicus](https://solvicus.com) `vendor` | MCP | GCP public pricing only; no billing access | Commercial (free tier) | Hosted, OAuth or API key | No (recommends; you purchase in GCP) | No | Sizes GCP CUD commitments from forward demand (contracts, renewals, pipeline) rather than usage history. |
 | [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
@@ -68,9 +69,15 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [chaandannn/finopsmcp](https://github.com/chaandannn/finopsmcp) - "nable", connects an assistant to AWS, Azure, GCP, and SaaS billing (such as Datadog) in plain English.
 - [Musheer360/aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) - Drives the AWS Pricing Calculator (436 services) via headless Chrome; no credentials required.
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
+- [connormatthewdouglas/agent-work-stack-deals](https://github.com/connormatthewdouglas/agent-work-stack-deals) - Free, read-only MCP server for GPU cloud rental prices, price changes and deals across providers. Hosted at `https://lantern-works-mcp.lantern-works.workers.dev/mcp` with no API key, or run locally with `uvx lantern-works-deals-mcp`.
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 - [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
+- [CloudQuell MCP](https://docs.cloudquell.com/mcp/get-started/overview/) `vendor` - Connects assistants to multi-cloud and AI cost data across AWS, Azure, GCP, Snowflake, Anthropic, and OpenAI, with tools for cost analysis, commitments, savings recommendations, anomalies, allocation, and budgets.
+- [Solvicus](https://solvicus.com/finops-mcp-server) `vendor` - Sizes Google Cloud committed use discount (CUD) commitments against forward demand you already know (signed contracts, renewals, and weighted pipeline) instead of usage history. Recommend-only, with no billing or console access.
+- [ZopDev MCP](https://zop.dev/learn/mcp-server) `vendor` - Cloud cost and infrastructure governance across AWS, Azure, GCP, Databricks and Snowflake; 263 tools (155 read, 108 write) over a hosted remote MCP endpoint, read-only by default with optional scoped writes.
+- [towardsthecloud/cloudburn](https://github.com/towardsthecloud/cloudburn) `vendor` - MCP server for read-only AWS cost checks in Terraform, CloudFormation, and live accounts, with a CLI and a Claude Code/Codex plugin.
+- [markatdataandbeyond/dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` - Read-only Databricks DBU cost and waste checks from system tables (idle SQL warehouses, long auto-stop, jobs on all-purpose, Delta OPTIMIZE/VACUUM needs). Proposes Asset Bundle diffs and SQL; never applies them. MIT-licensed notebook and stdio MCP server.
 
 ### AI cost agents & assistants
 
@@ -82,6 +89,9 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [Costory](https://costory.io) `vendor` - FinOps harness MCP for platform teams. Bills normalized in BigQuery and allocated to teams, with SSO. Build on it, or try it next to your tool. Read-only on cloud. Starter from $300/month, 30-day free trial. Works in Claude, Cursor and any MCP client, plus Slack.
 - [Atmoz](https://atmoz.co) `vendor` - Real-time cloud and AI efficiency platform; its Finius agent detects waste as it happens and pushes recommendations into Slack, Teams, and the IDE; read-only, with budgets, SSO, and RBAC.
 - [NudgeBee](https://github.com/nudgebee/nudgebee) `vendor` - Self-hosted agent that detects idle resources, spend anomalies, and rightsizing opportunities across AWS, Azure, GCP, and Kubernetes, and applies fixes through approval-gated runbooks. For platform and FinOps teams that want the optimization running inside their own cluster.
+- [Oodle AI](https://www.oodle.ai/product/ai-cost-management) `vendor` - AI cost management for coding agents (Claude Code, Codex): spend by user, model, team, and repo, session-level waste detection, and cost per PR. Part of Oodle's observability platform, with an MCP server.
+- [Nife Cost](https://cost.nife.io) `vendor` - Reads AWS spend (Azure, Google Cloud, and several smaller clouds in beta) and shows cost by service and account with savings recommendations; also offers a browser-based billing CSV savings estimator and a CloudFormation cost estimator. For platform and FinOps teams.
+- [Watchtower](https://watchtower.cerebrixos.com) `vendor` - Scans Azure, AWS and Google Cloud accounts for cost, security and drift findings, with an MCP server at `https://watchtower.cerebrixos.com/mcp`; for platform and FinOps teams.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
@@ -99,6 +109,7 @@ Skills and plugins that turn an AI coding assistant into a cost operator.
 - [OptimNow/cloud-finops-skills](https://github.com/OptimNow/cloud-finops-skills) - FOCUS-aligned FinOps knowledge skill and MCP for AI coding assistants.
 - [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - Curated MCP servers and resources for cloud FinOps practitioners.
 - [Cletrics/finops-agents](https://github.com/Cletrics/finops-agents) - Collection of FinOps specialist agents for assistants.
+- [ccarter01011/traxagent-claude-plugin](https://github.com/ccarter01011/traxagent-claude-plugin) `vendor` - Claude Code plugin and remote MCP server (also works in ChatGPT, Cursor and VS Code) for AI spend: the Anthropic, OpenAI and Gemini APIs, Claude Code, Codex and Cursor by team, person, model and API key, with ranked cost fixes. Read-only, OAuth sign-in. For engineering and finance teams tracking LLM spend.
 
 ### Evals & benchmarks
 
@@ -163,6 +174,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [turbot/steampipe-mod-aws-thrifty](https://github.com/turbot/steampipe-mod-aws-thrifty) - Checks AWS accounts for unused and under-used resources.
 - [aws-solutions-library-samples/cloud-intelligence-dashboards-framework](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) - Deploys the AWS Cloud Intelligence Dashboards.
 - [sls-mentor/sls-mentor](https://github.com/sls-mentor/sls-mentor) - Audits serverless AWS apps across cost and other pillars.
+- [auditaz/auditaz-cli](https://github.com/auditaz/auditaz-cli) `vendor` - Read-only AWS waste collector that runs locally with your own credentials and writes a JSON snapshot you can inspect before uploading; the rule engine and pricing run server-side at Auditaz.
 - [trackit/trackit](https://github.com/trackit/trackit) - Tooling to understand and improve AWS usage.
 
 ### Azure
@@ -185,6 +197,10 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
 - [bytebase/dbcost](https://github.com/bytebase/dbcost) - Cloud database pricing comparison.
 - [TUM-DIS/cloudspecs](https://github.com/TUM-DIS/cloudspecs) - Browser explorer for EC2 instances powered by DuckDB-WASM.
+- [AI Spend Doctor](https://aispenddoctor.com) `vendor` - Browser check of Claude and OpenAI API usage or cost CSV exports: daily spend spikes, prompt cache and batch share, and what older Claude model spend would cost at current list prices. Runs locally, the file is not uploaded. For teams reviewing their AI API bill.
+- [Basileion/vpsledger](https://github.com/Basileion/vpsledger) - VPS true-cost calculator and open JSON dataset comparing list price plus IPv4, backups and egress across providers.
+- [computecomparison.com](https://computecomparison.com/) - GPU cloud and LLM API price comparison with a free public pricing API.
+- [CIOQuest LLM Cost Calculator](https://cioquest.com/llm-cost-calculator) `vendor` - Free calculator: monthly LLM API cost from requests per day, tokens, cache share and retry share, using dated provider list prices.
 - [alvaroluceroo/llm-api-pricing-dataset](https://github.com/alvaroluceroo/llm-api-pricing-dataset) - LLM API prices per 1M tokens as each maker publishes them, with the source page and verification date on every row and a dated log of price changes, in JSON and CSV. For estimating and tracking LLM API spend.
 
 ### GreenOps & sustainability
