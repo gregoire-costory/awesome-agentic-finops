@@ -107,6 +107,7 @@ Skills and plugins that turn an AI coding assistant into a cost operator.
 - [OptimNow/cloud-finops-skills](https://github.com/OptimNow/cloud-finops-skills) - FOCUS-aligned FinOps knowledge skill and MCP for AI coding assistants.
 - [OptimNow/finops-mcp-resources](https://github.com/OptimNow/finops-mcp-resources) - Curated MCP servers and resources for cloud FinOps practitioners.
 - [Cletrics/finops-agents](https://github.com/Cletrics/finops-agents) - Collection of FinOps specialist agents for assistants.
+- [ccarter01011/traxagent-claude-plugin](https://github.com/ccarter01011/traxagent-claude-plugin) `vendor` - Claude Code plugin and remote MCP server (also works in ChatGPT, Cursor and VS Code) for AI spend: the Anthropic, OpenAI and Gemini APIs, Claude Code, Codex and Cursor by team, person, model and API key, with ranked cost fixes. Read-only, OAuth sign-in. For engineering and finance teams tracking LLM spend.
 
 ### Evals & benchmarks
 
