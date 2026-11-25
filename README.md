@@ -76,6 +76,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [Solvicus](https://solvicus.com/finops-mcp-server) `vendor` - Sizes Google Cloud committed use discount (CUD) commitments against forward demand you already know (signed contracts, renewals, and weighted pipeline) instead of usage history. Recommend-only, with no billing or console access.
 - [ZopDev MCP](https://zop.dev/learn/mcp-server) `vendor` - Cloud cost and infrastructure governance across AWS, Azure, GCP, Databricks and Snowflake; 263 tools (155 read, 108 write) over a hosted remote MCP endpoint, read-only by default with optional scoped writes.
 - [towardsthecloud/cloudburn](https://github.com/towardsthecloud/cloudburn) `vendor` - MCP server for read-only AWS cost checks in Terraform, CloudFormation, and live accounts, with a CLI and a Claude Code/Codex plugin.
+- [markatdataandbeyond/dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` - Read-only Databricks DBU cost and waste checks from system tables (idle SQL warehouses, long auto-stop, jobs on all-purpose, Delta OPTIMIZE/VACUUM needs). Proposes Asset Bundle diffs and SQL; never applies them. MIT-licensed notebook and stdio MCP server.
 
 ### AI cost agents & assistants
 
