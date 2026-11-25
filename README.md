@@ -201,6 +201,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [Basileion/vpsledger](https://github.com/Basileion/vpsledger) - VPS true-cost calculator and open JSON dataset comparing list price plus IPv4, backups and egress across providers.
 - [computecomparison.com](https://computecomparison.com/) - GPU cloud and LLM API price comparison with a free public pricing API.
 - [CIOQuest LLM Cost Calculator](https://cioquest.com/llm-cost-calculator) `vendor` - Free calculator: monthly LLM API cost from requests per day, tokens, cache share and retry share, using dated provider list prices.
+- [alvaroluceroo/llm-api-pricing-dataset](https://github.com/alvaroluceroo/llm-api-pricing-dataset) - LLM API prices per 1M tokens as each maker publishes them, with the source page and verification date on every row and a dated log of price changes, in JSON and CSV. For estimating and tracking LLM API spend.
 
 ### GreenOps & sustainability
 
