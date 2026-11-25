@@ -200,6 +200,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [AI Spend Doctor](https://aispenddoctor.com) `vendor` - Browser check of Claude and OpenAI API usage or cost CSV exports: daily spend spikes, prompt cache and batch share, and what older Claude model spend would cost at current list prices. Runs locally, the file is not uploaded. For teams reviewing their AI API bill.
 - [Basileion/vpsledger](https://github.com/Basileion/vpsledger) - VPS true-cost calculator and open JSON dataset comparing list price plus IPv4, backups and egress across providers.
 - [computecomparison.com](https://computecomparison.com/) - GPU cloud and LLM API price comparison with a free public pricing API.
+- [CIOQuest LLM Cost Calculator](https://cioquest.com/llm-cost-calculator) `vendor` - Free calculator: monthly LLM API cost from requests per day, tokens, cache share and retry share, using dated provider list prices.
 
 ### GreenOps & sustainability
 
