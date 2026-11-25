@@ -46,10 +46,11 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 
 | Tool | Kind | Cost sources | License | Delivery | Acts | Context | Note |
 |------|------|--------------|---------|----------|------|---------|------|
-| [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | Multi (cloud, LLM, data platforms) | Commercial (15-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
+| [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | Multi (cloud, LLM, data platforms) | Commercial (Starter from $300/month, 30-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi (cloud + SaaS) | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi (cloud + SaaS) | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
 | [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
+| [Solvicus](https://solvicus.com) `vendor` | MCP | GCP public pricing only; no billing access | Commercial (free tier) | Hosted, OAuth or API key | No (recommends; you purchase in GCP) | No | Sizes GCP CUD commitments from forward demand (contracts, renewals, pipeline) rather than usage history. |
 | [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
@@ -71,6 +72,9 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 - [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
+- [CloudQuell MCP](https://docs.cloudquell.com/mcp/get-started/overview/) `vendor` - Connects assistants to multi-cloud and AI cost data across AWS, Azure, GCP, Snowflake, Anthropic, and OpenAI, with tools for cost analysis, commitments, savings recommendations, anomalies, allocation, and budgets.
+- [Solvicus](https://solvicus.com/finops-mcp-server) `vendor` - Sizes Google Cloud committed use discount (CUD) commitments against forward demand you already know (signed contracts, renewals, and weighted pipeline) instead of usage history. Recommend-only, with no billing or console access.
+- [ZopDev MCP](https://zop.dev/learn/mcp-server) `vendor` - Cloud cost and infrastructure governance across AWS, Azure, GCP, Databricks and Snowflake; 263 tools (155 read, 108 write) over a hosted remote MCP endpoint, read-only by default with optional scoped writes.
 
 ### AI cost agents & assistants
 
@@ -79,9 +83,10 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` - AWS's own agent (public preview, June 2026): investigates anomalies to root cause via CloudTrail, answers cost questions, schedules reports, and files optimization recommendations as Jira tickets. AWS only, console-based, free during preview with a usage cap.
 - [Vantage](https://www.vantage.sh) `vendor` - FinOps Agent that proactively finds savings and can execute commitment purchases with approval; ships open-source MCP servers.
 - [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
-- [Costory](https://costory.io) `vendor` - Assistant and hosted MCP on top of a context layer (business metrics, unit economics, virtual dimensions); ingests cloud (AWS, GCP, Azure) plus SaaS and AI spend (Snowflake, Datadog, Anthropic, Cursor, and more); runs in Claude, Cursor, VS Code, and Dust.
+- [Costory](https://costory.io) `vendor` - FinOps harness MCP for platform teams. Bills normalized in BigQuery and allocated to teams, with SSO. Build on it, or try it next to your tool. Read-only on cloud. Starter from $300/month, 30-day free trial. Works in Claude, Cursor and any MCP client, plus Slack.
 - [Atmoz](https://atmoz.co) `vendor` - Real-time cloud and AI efficiency platform; its Finius agent detects waste as it happens and pushes recommendations into Slack, Teams, and the IDE; read-only, with budgets, SSO, and RBAC.
 - [NudgeBee](https://github.com/nudgebee/nudgebee) `vendor` - Self-hosted agent that detects idle resources, spend anomalies, and rightsizing opportunities across AWS, Azure, GCP, and Kubernetes, and applies fixes through approval-gated runbooks. For platform and FinOps teams that want the optimization running inside their own cluster.
+- [Oodle AI](https://www.oodle.ai/product/ai-cost-management) `vendor` - AI cost management for coding agents (Claude Code, Codex): spend by user, model, team, and repo, session-level waste detection, and cost per PR. Part of Oodle's observability platform, with an MCP server.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
@@ -89,7 +94,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 
 Skills and plugins that turn an AI coding assistant into a cost operator.
 
-- [costory-io/costory-finops-mcp-skills](https://github.com/costory-io/costory-finops-mcp-skills) `vendor` - Claude Code / Codex marketplace plugin packaging five [FinOps skills](https://github.com/costory-io/costory-finops-mcp-skills#finops-skills) (query investigation, virtual dimensions, dashboards, reports/DIGEST, recipes) over the hosted [Costory MCP tools](https://github.com/costory-io/costory-finops-mcp-skills#mcp-tools-reference), plus a library of ready-made tracking recipes.
+- [costory-io/costory-finops-mcp-skills](https://github.com/costory-io/costory-finops-mcp-skills) `vendor` - Claude Code, Codex, and Cursor plugin and Gemini CLI extension that wires up the hosted [Costory MCP server](https://github.com/costory-io/costory-finops-mcp-skills#mcp-tools-reference) and packages seven [FinOps skills](https://github.com/costory-io/costory-finops-mcp-skills#finops-skills) (cost-change investigation, query, virtual dimensions, dashboards, reports/DIGEST, recipes, BigQuery), plus a library of ready-made tracking recipes.
 - [Aboudjem/aws-cost-audit-skill](https://github.com/Aboudjem/aws-cost-audit-skill) - Claude skill that audits an AWS bill; evidence-first, read-only, follows AWS Well-Architected and the FinOps Foundation framework.
 - [mindaugasnakrosis/azure-costs-analyzer](https://github.com/mindaugasnakrosis/azure-costs-analyzer) - Claude Code skill for a read-only Azure cost review against Microsoft and FinOps Foundation rules.
 - [prajapatimehul/claude-aws-cost-saver](https://github.com/prajapatimehul/claude-aws-cost-saver) - Claude Code and Codex plugin with 160+ AWS cost checks.
