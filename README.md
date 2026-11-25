@@ -171,6 +171,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [turbot/steampipe-mod-aws-thrifty](https://github.com/turbot/steampipe-mod-aws-thrifty) - Checks AWS accounts for unused and under-used resources.
 - [aws-solutions-library-samples/cloud-intelligence-dashboards-framework](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) - Deploys the AWS Cloud Intelligence Dashboards.
 - [sls-mentor/sls-mentor](https://github.com/sls-mentor/sls-mentor) - Audits serverless AWS apps across cost and other pillars.
+- [auditaz/auditaz-cli](https://github.com/auditaz/auditaz-cli) `vendor` - Read-only AWS waste collector that runs locally with your own credentials and writes a JSON snapshot you can inspect before uploading; the rule engine and pricing run server-side at Auditaz.
 - [trackit/trackit](https://github.com/trackit/trackit) - Tooling to understand and improve AWS usage.
 
 ### Azure
