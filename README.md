@@ -89,6 +89,7 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [Atmoz](https://atmoz.co) `vendor` - Real-time cloud and AI efficiency platform; its Finius agent detects waste as it happens and pushes recommendations into Slack, Teams, and the IDE; read-only, with budgets, SSO, and RBAC.
 - [NudgeBee](https://github.com/nudgebee/nudgebee) `vendor` - Self-hosted agent that detects idle resources, spend anomalies, and rightsizing opportunities across AWS, Azure, GCP, and Kubernetes, and applies fixes through approval-gated runbooks. For platform and FinOps teams that want the optimization running inside their own cluster.
 - [Oodle AI](https://www.oodle.ai/product/ai-cost-management) `vendor` - AI cost management for coding agents (Claude Code, Codex): spend by user, model, team, and repo, session-level waste detection, and cost per PR. Part of Oodle's observability platform, with an MCP server.
+- [Nife Cost](https://cost.nife.io) `vendor` - Reads AWS spend (Azure, Google Cloud, and several smaller clouds in beta) and shows cost by service and account with savings recommendations; also offers a browser-based billing CSV savings estimator and a CloudFormation cost estimator. For platform and FinOps teams.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
