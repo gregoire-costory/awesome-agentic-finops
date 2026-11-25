@@ -46,15 +46,15 @@ Vendor tools and the most active open-source MCP servers, side by side. "Acts" m
 
 | Tool | Kind | Cost sources | License | Delivery | Acts | Context | Note |
 |------|------|--------------|---------|----------|------|---------|------|
-| [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | Multi (cloud, LLM, data platforms) | Commercial (30-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
+| [Costory](https://docs.costory.io/features/mcp) `vendor` | Assistant + MCP | Multi (cloud, LLM, data platforms) | Commercial (Starter from $300/month, 30-day trial) | Hosted, OAuth | Yes (alerts, reports, dashboards) | Yes | Context layer: business metrics, unit economics, virtual dimensions. |
 | [Vantage](https://www.vantage.sh) `vendor` | Agent + MCP | Multi (cloud + SaaS) | Commercial; MCP servers open source | Hosted + self-host MCP | Yes (agent buys SP/RI, human-in-loop) | Partial | FinOps Certified Platform; open-sourced local and remote MCP servers. |
 | [CloudZero](https://www.cloudzero.com) `vendor` | Assistant + MCP | Multi (cloud + SaaS) | Commercial | Hosted | Chat | Yes | "Ask Advisor"; strong unit-cost / cost-per-customer focus. |
 | [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` | Agent | AWS only | Free in preview (usage cap) | AWS console (us-east-1) | Yes (reports, Jira tickets) | Partial (context files) | Public preview June 2026. Root-causes anomalies via CloudTrail; no MCP; multi-account via management account. |
+| [Solvicus](https://solvicus.com) `vendor` | MCP | GCP public pricing only; no billing access | Commercial (free tier) | Hosted, OAuth or API key | No (recommends; you purchase in GCP) | No | Sizes GCP CUD commitments from forward demand (contracts, renewals, pipeline) rather than usage history. |
 | [aws-cost-explorer-mcp-server](https://github.com/aarora79/aws-cost-explorer-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Cost Explorer plus Bedrock invocation logs. |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | MCP | AWS | OSS (MIT) | Self-host | Read + audit | No | Cost analysis, waste audit, budgets across CLI profiles. |
 | [AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) | MCP | Azure | OSS (MIT) | Self-host | Read | No | Retail pricing, Spot and savings analysis, orphaned-resource detection. |
 | [cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) | MCP | AWS, Azure, GCP, OCI | OSS (Apache-2.0) | Self-host | Read | No | Multi-cloud price comparison from public APIs. |
-| [dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` | MCP + notebook | Databricks system tables | OSS (MIT) | Self-host | Proposals only (never applied) | No | Idle warehouses, long auto-stop, jobs on all-purpose, Delta maintenance signals. |
 | [aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) | MCP | AWS | OSS (MIT) | Self-host | Read | No | Drives the AWS Pricing Calculator, no credentials. |
 
 ### MCP servers
@@ -66,13 +66,17 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [prashantgupta123/aws-finops-mcp-server](https://github.com/prashantgupta123/aws-finops-mcp-server) - AWS FinOps MCP packaged for the Amazon Bedrock AgentCore runtime.
 - [msftnadavbh/AzurePricingMCP](https://github.com/msftnadavbh/AzurePricingMCP) - Azure retail pricing with Spot and savings analysis and orphaned-resource detection.
 - [julianobarbosa/azure-finops-mcp-server](https://github.com/julianobarbosa/azure-finops-mcp-server) - Azure cost analysis, waste audit, and budgets over MCP.
-- [markatdataandbeyond/dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` - Read-only Databricks DBU cost and waste checks from system tables (idle SQL warehouses, long auto-stop, jobs on all-purpose, Delta OPTIMIZE/VACUUM needs). Proposes Asset Bundle diffs and SQL; never applies them. MIT notebook + stdio MCP.
 - [chaandannn/finopsmcp](https://github.com/chaandannn/finopsmcp) - "nable", connects an assistant to AWS, Azure, GCP, and SaaS billing (such as Datadog) in plain English.
 - [Musheer360/aws-calculator-mcp](https://github.com/Musheer360/aws-calculator-mcp) - Drives the AWS Pricing Calculator (436 services) via headless Chrome; no credentials required.
 - [jasonwilbur/cloud-cost-mcp](https://github.com/jasonwilbur/cloud-cost-mcp) - Multi-cloud price comparison (AWS, Azure, GCP, OCI) from public pricing APIs.
 - [ecos-labs/ecos](https://github.com/ecos-labs/ecos) - Open FinOps data stack with a CLI and an MCP server.
 - [aws-samples/sample-cfm-tips-mcp](https://github.com/aws-samples/sample-cfm-tips-mcp) - MCP server built on AWS Cloud Financial Management playbooks.
 - [Cloudaware MCP](https://docs.cloudaware.com/DOCS/cloudaware-mcp-overview) `vendor` - Connects assistants to the Cloudaware CMDB graph and BigQuery cost and usage exports via read-only SQL, joining infrastructure metadata with spend.
+- [CloudQuell MCP](https://docs.cloudquell.com/mcp/get-started/overview/) `vendor` - Connects assistants to multi-cloud and AI cost data across AWS, Azure, GCP, Snowflake, Anthropic, and OpenAI, with tools for cost analysis, commitments, savings recommendations, anomalies, allocation, and budgets.
+- [Solvicus](https://solvicus.com/finops-mcp-server) `vendor` - Sizes Google Cloud committed use discount (CUD) commitments against forward demand you already know (signed contracts, renewals, and weighted pipeline) instead of usage history. Recommend-only, with no billing or console access.
+- [ZopDev MCP](https://zop.dev/learn/mcp-server) `vendor` - Cloud cost and infrastructure governance across AWS, Azure, GCP, Databricks and Snowflake; 263 tools (155 read, 108 write) over a hosted remote MCP endpoint, read-only by default with optional scoped writes.
+- [towardsthecloud/cloudburn](https://github.com/towardsthecloud/cloudburn) `vendor` - MCP server for read-only AWS cost checks in Terraform, CloudFormation, and live accounts, with a CLI and a Claude Code/Codex plugin.
+- [markatdataandbeyond/dbu-waste-finder](https://github.com/markatdataandbeyond/dbu-waste-finder) `vendor` - Read-only Databricks DBU cost and waste checks from system tables (idle SQL warehouses, long auto-stop, jobs on all-purpose, Delta OPTIMIZE/VACUUM needs). Proposes Asset Bundle diffs and SQL; never applies them. MIT-licensed notebook and stdio MCP server.
 
 ### AI cost agents & assistants
 
@@ -81,9 +85,10 @@ Agents and copilots that analyze and act on cloud cost. Includes the commercial 
 - [AWS FinOps Agent](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/) `vendor` - AWS's own agent (public preview, June 2026): investigates anomalies to root cause via CloudTrail, answers cost questions, schedules reports, and files optimization recommendations as Jira tickets. AWS only, console-based, free during preview with a usage cap.
 - [Vantage](https://www.vantage.sh) `vendor` - FinOps Agent that proactively finds savings and can execute commitment purchases with approval; ships open-source MCP servers.
 - [CloudZero](https://www.cloudzero.com) `vendor` - "Ask Advisor" conversational assistant plus an MCP server; strong on unit cost and cost-per-customer.
-- [Costory](https://costory.io) `vendor` - Assistant and hosted MCP on top of a context layer: normalizes cloud (AWS, GCP, Azure, Kubernetes) plus SaaS and AI spend (Snowflake, Datadog, OpenAI, Anthropic, Cursor, and more), allocates shared cost to teams and features (virtual dimensions), and models business metrics and unit economics. Detailed investigations in notebooks; runs in Claude, Cursor, VS Code, Codex, Gemini CLI, Dust, and Slack.
+- [Costory](https://costory.io) `vendor` - FinOps harness MCP for platform teams. Bills normalized in BigQuery and allocated to teams, with SSO. Build on it, or try it next to your tool. Read-only on cloud. Starter from $300/month, 30-day free trial. Works in Claude, Cursor and any MCP client, plus Slack.
 - [Atmoz](https://atmoz.co) `vendor` - Real-time cloud and AI efficiency platform; its Finius agent detects waste as it happens and pushes recommendations into Slack, Teams, and the IDE; read-only, with budgets, SSO, and RBAC.
 - [NudgeBee](https://github.com/nudgebee/nudgebee) `vendor` - Self-hosted agent that detects idle resources, spend anomalies, and rightsizing opportunities across AWS, Azure, GCP, and Kubernetes, and applies fixes through approval-gated runbooks. For platform and FinOps teams that want the optimization running inside their own cluster.
+- [Oodle AI](https://www.oodle.ai/product/ai-cost-management) `vendor` - AI cost management for coding agents (Claude Code, Codex): spend by user, model, team, and repo, session-level waste detection, and cost per PR. Part of Oodle's observability platform, with an MCP server.
 - [MrigankJaiswal-hub/finops-Agent](https://github.com/MrigankJaiswal-hub/finops-Agent) - Open-source FinOps agent on AWS Bedrock with analyze, recommend, and execute steps.
 - [danjamk/slack-aws-cost-guardian](https://github.com/danjamk/slack-aws-cost-guardian) - AI-driven AWS cost monitoring and anomaly alerts in Slack.
 
@@ -187,6 +192,7 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [doitintl/gcpinstances.info](https://github.com/doitintl/gcpinstances.info) - GCP instance pricing comparison.
 - [bytebase/dbcost](https://github.com/bytebase/dbcost) - Cloud database pricing comparison.
 - [TUM-DIS/cloudspecs](https://github.com/TUM-DIS/cloudspecs) - Browser explorer for EC2 instances powered by DuckDB-WASM.
+- [AI Spend Doctor](https://aispenddoctor.com) `vendor` - Browser check of Claude and OpenAI API usage or cost CSV exports: daily spend spikes, prompt cache and batch share, and what older Claude model spend would cost at current list prices. Runs locally, the file is not uploaded. For teams reviewing their AI API bill.
 
 ### GreenOps & sustainability
 
