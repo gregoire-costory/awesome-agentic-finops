@@ -75,6 +75,7 @@ Model Context Protocol servers that expose cloud cost data and actions to AI ass
 - [CloudQuell MCP](https://docs.cloudquell.com/mcp/get-started/overview/) `vendor` - Connects assistants to multi-cloud and AI cost data across AWS, Azure, GCP, Snowflake, Anthropic, and OpenAI, with tools for cost analysis, commitments, savings recommendations, anomalies, allocation, and budgets.
 - [Solvicus](https://solvicus.com/finops-mcp-server) `vendor` - Sizes Google Cloud committed use discount (CUD) commitments against forward demand you already know (signed contracts, renewals, and weighted pipeline) instead of usage history. Recommend-only, with no billing or console access.
 - [ZopDev MCP](https://zop.dev/learn/mcp-server) `vendor` - Cloud cost and infrastructure governance across AWS, Azure, GCP, Databricks and Snowflake; 263 tools (155 read, 108 write) over a hosted remote MCP endpoint, read-only by default with optional scoped writes.
+- [towardsthecloud/cloudburn](https://github.com/towardsthecloud/cloudburn) `vendor` - MCP server for read-only AWS cost checks in Terraform, CloudFormation, and live accounts, with a CLI and a Claude Code/Codex plugin.
 
 ### AI cost agents & assistants
 
