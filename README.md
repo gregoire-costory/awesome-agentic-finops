@@ -202,11 +202,13 @@ Emerging. There is not yet a credible, neutral public benchmark for FinOps assis
 - [computecomparison.com](https://computecomparison.com/) - GPU cloud and LLM API price comparison with a free public pricing API.
 - [CIOQuest LLM Cost Calculator](https://cioquest.com/llm-cost-calculator) `vendor` - Free calculator: monthly LLM API cost from requests per day, tokens, cache share and retry share, using dated provider list prices.
 - [alvaroluceroo/llm-api-pricing-dataset](https://github.com/alvaroluceroo/llm-api-pricing-dataset) - LLM API prices per 1M tokens as each maker publishes them, with the source page and verification date on every row and a dated log of price changes, in JSON and CSV. For estimating and tracking LLM API spend.
+- [SOMA LLM API Cost Calculator](https://somaai.earth/ai-footprint/llm-api-cost-calculator) `vendor` - Free calculator that compares models' list-price cost for a given token mix, with caching and batch discounts and CO2e shown next to cost.
 
 ### GreenOps & sustainability
 
 - [omrdev1/greenops-cli](https://github.com/omrdev1/greenops-cli) - Carbon-footprint linting for CI/CD pipelines.
 - [vinayalodha/greenbot](https://github.com/vinayalodha/greenbot) - AWS cost optimization tool.
+- [SOMA AI Emission Factors (SAEF)](https://doi.org/10.5281/zenodo.20443585) - Open dataset of per-request energy, CO2e and water factors for AI inference by model class and cloud region, with a PyPI package and an MCP server, for teams adding carbon to AI cost reporting.
 
 ### Standards & foundations
 
